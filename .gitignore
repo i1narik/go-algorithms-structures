@@ -1,0 +1,6 @@
+/.idea/.gitignore
+/.idea/modules.xml
+/.idea/vcs.xml
+/.idea/go-algorithms-structures.iml
+/go-algorithms-structures
+/main.go
