@@ -1,6 +1,8 @@
 package algorithms
 
-func FibonacciRecursive(n int) int {
+import "math"
+
+func FibonacciRecursive(n uint64) uint64 {
 	if n == 0 {
 		return 0
 	} else if n == 1 {
@@ -10,16 +12,22 @@ func FibonacciRecursive(n int) int {
 	}
 }
 
-func Fibonacci(n int) int {
+func Fibonacci(n uint64) uint64 {
 	if n == 0 {
 		return 0
 	} else if n == 1 {
 		return 1
 	}
-	prev := 0
-	current := 1
-	for i := 2; i <= n; i++ {
+	var prev uint64 = 0
+	var current uint64 = 1
+	for i := uint64(2); i <= n; i++ {
 		prev, current = current, current+prev
 	}
 	return current
+}
+
+func Fibonacci1(n uint64) uint64 {
+	sqrt5 := math.Sqrt(float64(5))
+	phi := (sqrt5 + 1) / 2
+	return uint64(math.Pow(phi, float64(n)) / (sqrt5 + 0.5))
 }
